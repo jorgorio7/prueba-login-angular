@@ -1,0 +1,28 @@
+<div class="backgroundContainer">
+    <div class="mainBox">
+
+        <img class="logoImage" src="assets/images/logo.jpg" height="150" width="150">
+
+        <h2>Prueba técnica</h2>
+
+        <form [formGroup]="loginForm" class="formContainer">
+            
+            <div class="inputContainer">
+                <mat-icon fill="0" class="inputIcon">person</mat-icon>
+                <input class="inputForm" formControlName="username"  placeholder="Email">
+            </div>
+            <span *ngIf="loginForm.get('username').hasError('required') && loginForm.controls['username'].touched" class="errorMessage">Campo requerido</span>
+            <span *ngIf="loginForm.get('username').hasError('email') && loginForm.controls['username'].touched" class="errorMessage">Debe ser formato email</span>
+
+            <div class="inputContainer">
+                <mat-icon class="inputIcon">lock</mat-icon>
+                <input class="inputForm" formControlName="password"  placeholder="Contraseña">
+            </div>
+             <span *ngIf="loginForm.get('password').hasError('required') && loginForm.controls['password'].touched" class="errorMessage">Campo requerido</span>
+             <span *ngIf="loginForm.get('password').hasError('minlength') && loginForm.controls['password'].touched" class="errorMessage">Debe contener 5 caracteres mínimo</span>
+
+            <button class="submitButton" type="submit" (click)="login()">Acceder</button> 
+
+        </form> 
+    </div>
+</div>
