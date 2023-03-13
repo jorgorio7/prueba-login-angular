@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { By } from '@angular/platform-browser';
 
 import { LoginComponent } from './login.component';
@@ -12,7 +13,8 @@ describe('LoginComponent', () => {
       imports: [
         MatIconModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        MatSlideToggleModule
       ],
       declarations: [LoginComponent]
     })
@@ -38,7 +40,7 @@ describe('LoginComponent', () => {
 
     expect(form.invalid).toBeTrue();
   });
-
+ 
 
   it('should be invalid form - Entered username without email format', () => {
     const fixture = TestBed.createComponent(LoginComponent);
@@ -48,8 +50,11 @@ describe('LoginComponent', () => {
     const form = component.loginForm;
     const email = component.loginForm.controls['username'];
     const password = component.loginForm.controls['password'];
+    const rememberUser = component.loginForm.controls['rememberUser'];
+
     email.setValue('username123');
     password.setValue('123425');
+    rememberUser.setValue(false);
 
     expect(form.invalid).toBeTrue();
   });
@@ -96,7 +101,7 @@ describe('LoginComponent', () => {
 
     expect(form.invalid).toBeTrue();
   });
-
+ 
 
 
 });

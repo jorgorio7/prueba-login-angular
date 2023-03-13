@@ -13,7 +13,7 @@ export class LoginComponent {
     this.loginForm = new FormGroup({
       username: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(5)]),
-      rememberUser: new FormControl(false, [])
+      rememberUser: new FormControl(false)
     });
   }
 
