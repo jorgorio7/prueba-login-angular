@@ -1,8 +1,7 @@
 <div class="backgroundContainer">
-    <div class="mainBox">
+    <div class="mainBox fadeIn">
 
         <img class="logoImage" src="assets/images/logo.jpg" height="150" width="150">
-
         <h2 class="titleForm">Prueba técnica</h2>
 
         <form [formGroup]="loginForm" class="formContainer">
@@ -21,15 +20,12 @@
              <span *ngIf="loginForm.get('password').hasError('required') && loginForm.controls['password'].touched" class="errorMessage">Campo requerido</span>
              <span *ngIf="loginForm.get('password').hasError('minlength') && loginForm.controls['password'].touched" class="errorMessage">Debe contener 5 caracteres mínimo</span>
 
-
              <div class="rememberContainer">
                 <div class="rememberSpanContainer"><span>Recordar</span></div>
-                <div class="toggleContainer"><mat-slide-toggle formControlName="rememberUser"></mat-slide-toggle></div>
-                
+                <div class="toggleContainer"><mat-slide-toggle formControlName="rememberUser"></mat-slide-toggle></div>      
              </div>
 
             <button class="submitButton" type="submit" (click)="login()">Acceder</button> 
-
         </form> 
     </div>
 </div>
