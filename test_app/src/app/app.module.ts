@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import {MatIconModule} from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
